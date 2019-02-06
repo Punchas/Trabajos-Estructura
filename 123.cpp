@@ -1,34 +1,10 @@
 #include <stdio.h>
-int main()
-{
-	int i, n=0;
-	struct Datos;
-		char Nombre[20];
-		char Apellido_P[20];
-		char Apellido_M[20];
-		int Edad;
-		char Sexo[2];
-		struct Datos Agenda;
-	printf("Cuantos datos desea ingresar? \n");
-	scanf("%d", &n);
-		for(i=0;i<n; i++)
-	{
-		Agenda[i].Nombre=scanf("%c", &Nombre);
-		Agenda[i].Apellido_P=scanf("%c", &Apellido_P);
-		Agenda[i].Apellido_M=scanf("%c", &Apellido_M);
-		Agenda[i].Edad=scanf("%d", &Edad);
-		Agenda[i].Sexo=scanf("%c", &Sexo);
-	}
-	return 0;
-}
-
-#include <stdio.h>
 struct Datos {
-	char Nombre;
-	char Apellido_P;
-	char Apellido_M;
-	int Edad;
-	char Sexo;
+	char Nombre[20];
+	char Apellido_P[20];
+	char Apellido_M[20];
+	char Edad[20];
+	char Sexo[20];
 };
 int main()
 {
@@ -36,13 +12,27 @@ int main()
 	struct Datos Agenda[20];
 	printf("Cuantos datos desea ingresar? \n");
 	scanf("%d", &n);
-		for(i=0;i<n; i++)
+		for(i=1;i<=n; i++)
 	{
-		Agenda[i].Nombre=scanf("%c", &Nombre);
-		Agenda[i].Apellido_P=scanf("%c", &Apellido_P);
-		Agenda[i].Apellido_M=scanf("%c", &Apellido_M);
-		Agenda[i].Edad=scanf("%d", &Edad);
-		Agenda[i].Sexo=scanf("%c", &Sexo);
+		printf("Numero en la agenda ->%d\n", i);
+		printf("Escriba nombre: ");
+		scanf("%s", &Agenda[i].Nombre);
+		printf("Escriba apellido paterno: ");
+		scanf("%s", &Agenda[i].Apellido_P);
+		printf("Escriba apellido materno: ");
+		scanf("%s", &Agenda[i].Apellido_M);
+		printf("Escriba edad: ");
+		scanf("%s", &Agenda[i].Edad);
+		printf("Escriba sexo ");
+		scanf("%s", &Agenda[i].Sexo);
+		printf("\n-------------------------------\n");
 	}
-	return 0;
+	printf("Nombre\tApellido paterno\tApellido materno\tEdad\tSexo\n");
+	for(i=1;i<=n;i++)
+	{
+		printf("%s\t%s\t\t%s\t\t%s\t%s\t",Agenda[i].Nombre, Agenda[i].Apellido_P, Agenda[i].Apellido_M, Agenda[i].Edad, Agenda[i].Sexo);
+	}
+return 0;	
 }
+	
+	
