@@ -21,3 +21,28 @@ int main()
 	}
 	return 0;
 }
+
+#include <stdio.h>
+struct Datos {
+	char Nombre;
+	char Apellido_P;
+	char Apellido_M;
+	int Edad;
+	char Sexo;
+};
+int main()
+{
+    int n, i;
+	struct Datos Agenda[20];
+	printf("Cuantos datos desea ingresar? \n");
+	scanf("%d", &n);
+		for(i=0;i<n; i++)
+	{
+		Agenda[i].Nombre=scanf("%c", &Nombre);
+		Agenda[i].Apellido_P=scanf("%c", &Apellido_P);
+		Agenda[i].Apellido_M=scanf("%c", &Apellido_M);
+		Agenda[i].Edad=scanf("%d", &Edad);
+		Agenda[i].Sexo=scanf("%c", &Sexo);
+	}
+	return 0;
+}
