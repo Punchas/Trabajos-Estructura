@@ -43,20 +43,21 @@ int main()
 			sum_edadF+=Agenda[i].Edad;
 		}	
 	}
-	printf("Nombre \tAp paterno \tAp materno \tEdad \tSexo \n");
+	printf("Nombre \t\tAp paterno \t\tAp materno \t\tEdad \t\tSexo \n");
+	printf("------ \t\t---------- \t\t---------- \t\t---- \t\t---- \n");
 	for(i=1;i<=n;i++)
 	{
-		printf("%s \t", Agenda[i].Nombre);
-		printf("%s \t", Agenda[i].Apellido_P);
-		printf("%s \t", Agenda[i].Apellido_M);
-		printf("%d \t" , Agenda[i].Edad);
-		printf("%s \t \n", Agenda[i].Sexo);
+		printf("%s \t\t ", Agenda[i].Nombre);
+		printf("%s \t\t ", Agenda[i].Apellido_P);
+		printf("%s \t\t ", Agenda[i].Apellido_M);
+		printf("%d \t\t " , Agenda[i].Edad);
+		printf("%s \n", Agenda[i].Sexo);
 	}
 	printf("Numero de Hombres: %f\n", num_hombres);
 	printf("Numero de Mujeres: %f\n", num_mujeres);
 	printf("Promedio de edad Hombres: %f\n", sum_edadM/num_hombres);
 	printf("Promedio de edad mujeres: %f\n", sum_edadF/num_mujeres);
-	printf("Promedio de edad del grupo: %f\n", (num_hombres+num_mujeres)/(sum_edadM+sum_edadF));
+	printf("Promedio de edad del grupo: %f\n", (sum_edadM+sum_edadF)/n);
 
 return 0;	
 }
