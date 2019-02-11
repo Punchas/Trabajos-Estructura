@@ -7,18 +7,18 @@ struct Datos {
 	char Nombre[20];
 	char Apellido_P[20];
 	char Apellido_M[20];
-	int Edad[20];
-	char Sexo[20];
+	int Edad;
+	char Sexo[2];
 };
 int main()
 {
-    int n, i, num_hombres=0, num_mujeres=0, sum_edadF=0, sum_edadM=0, sumaT=0;
+    int n, i; 
+	float num_hombres=0, num_mujeres=0, sum_edadF=0, sum_edadM=0;
 	struct Datos Agenda[20];
 	printf("Cuantos datos desea ingresar? \n");
 	scanf("%d", &n);
 		for(i=1;i<=n; i++)
 	{
-		printf("Numero en la agenda -> %d\n", i);
 		printf("Escriba nombre: ");
 		scanf("%s", &Agenda[i].Nombre);
 		printf("Escriba apellido paterno: ");
@@ -30,32 +30,33 @@ int main()
 		printf("Escriba sexo ('M' o 'F'): ");
 		scanf("%s", &Agenda[i].Sexo);
 		printf("\n-------------------------------\n");
-	}
-	printf("Nombre\tApellido paterno\tApellido materno\tEdad\tSexo\n");
-	for(i=1;i<=n;i++)
-	{
-		printf("%s\t%s\t\t%s\t\t%d\t%s\t",Agenda[i].Nombre, Agenda[i].Apellido_P, Agenda[i].Apellido_M, Agenda[i].Edad, Agenda[i].Sexo);
-	}
-	//No se que hacer//
-	/*
-	for(i=1; i<=n; i++)
-	{
 		//Proceso para hombres
-		if(Agenda[i].Sexo=='M')
+		if(Agenda[i].Sexo[0]=='M' || Agenda[i].Sexo[0]=='m')
 		{
 			num_hombres++;
+			sum_edadM+=Agenda[i].Edad;
 		}
 		//Proceso para mujeres
-		if(Agenda[i].Sexo=='F')
+		else
 		{
 			num_mujeres++;	
-		}
+			sum_edadF+=Agenda[i].Edad;
+		}	
 	}
-	printf("Numero de Hombres: %d", num_hombres);
-	printf("Numero de Mujeres: %d", num_mujeres);
-	printf("Promedio de edad Hombres: %d", sum_edadM/num_hombres);
-	printf("Promedio de edad mujeres: %d", sum_edadF/num_mujeres);
-	printf("Promedio de edad del grupo: %d", );
-	*/
+	printf("Nombre \tAp paterno \tAp materno \tEdad \tSexo \n");
+	for(i=1;i<=n;i++)
+	{
+		printf("%s \t", Agenda[i].Nombre);
+		printf("%s \t", Agenda[i].Apellido_P);
+		printf("%s \t", Agenda[i].Apellido_M);
+		printf("%d \t" , Agenda[i].Edad);
+		printf("%s \t \n", Agenda[i].Sexo);
+	}
+	printf("Numero de Hombres: %f\n", num_hombres);
+	printf("Numero de Mujeres: %f\n", num_mujeres);
+	printf("Promedio de edad Hombres: %f\n", sum_edadM/num_hombres);
+	printf("Promedio de edad mujeres: %f\n", sum_edadF/num_mujeres);
+	printf("Promedio de edad del grupo: %f\n", (num_hombres+num_mujeres)/(sum_edadM+sum_edadF));
+
 return 0;	
 }
