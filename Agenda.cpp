@@ -28,7 +28,7 @@ int main()
 		printf("Escriba edad: ");
 		scanf("%d", &Agenda[i].Edad);
 		printf("Escriba sexo ('M' o 'F'): ");
-		scanf("%s", &Agenda[i].Sexo);
+		scanf("%c", &Agenda[i].Sexo);
 		printf("\n-------------------------------\n");
 		//Proceso para hombres
 		if(Agenda[i].Sexo=='M' || Agenda[i].Sexo=='m')
