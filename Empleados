@@ -1,0 +1,55 @@
+#include <stdio.h>
+//Programa hecho por: Diego Sanchez Rebollo
+//Matricula: 20500608
+//ID: 3361683
+//Ingresas 3 registros de empleados si han trabajado mas de 5 años recibe un aumento de 40% entre 1 y 5 solo de 20%
+
+int main()
+{
+	struct Datos 
+	{
+		char nombre[20];
+		char puesto[20];
+		float sueldo;
+		float anyos;
+		float n_sueldo;
+	};
+	int i;
+	struct Datos trabajadores[20]; 
+	printf("3 registros \n");
+	printf("----------------\n");
+	for(i=0; i<3;i++)
+	{
+		printf("Ingrese nombre del empleado: \n");
+		scanf("%s", &trabajadores[i].nombre);
+		printf("Ingrese puesto: \n");
+		scanf("%s", &trabajadores[i].puesto);
+		printf("Ingrese su sueldo mensual: \n");
+		scanf("%f", &trabajadores[i].sueldo);
+		printf("Ingrese a%cos de antiguedad; \n", 164);
+		scanf("%f", &trabajadores[i].anyos);
+		printf("----------------\n");
+		if(trabajadores[i].anyos>5)
+		{
+			trabajadores[i].n_sueldo=trabajadores[i].sueldo*1.40;
+		}
+		else
+		{
+			trabajadores[i].n_sueldo=trabajadores[i].sueldo*1.2;
+		}
+	}
+	printf("Nombre\t\t");
+	printf("Puesto\t\t");
+	printf("Sueldo\t\t");
+	printf("A%cos\t\t\t", 164);
+	printf("Nuevo saldo\t\t\t\n");
+	for(i=0; i<3; i++)
+	{
+		printf("%s\t\t", trabajadores[i].nombre);
+		printf("%s\t\t", trabajadores[i].puesto);
+		printf("%f\t\t", trabajadores[i].sueldo);
+		printf("%f\t\t\t", trabajadores[i].anyos);
+		printf("%f\t\t\t\n", trabajadores[i].n_sueldo);
+	}
+return 0;
+}
