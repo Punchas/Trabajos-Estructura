@@ -8,7 +8,7 @@ struct Datos {
 	char Apellido_P[20];
 	char Apellido_M[20];
 	int Edad;
-	char Sexo[2];
+	char Sexo;
 };
 int main()
 {
@@ -31,7 +31,7 @@ int main()
 		scanf("%s", &Agenda[i].Sexo);
 		printf("\n-------------------------------\n");
 		//Proceso para hombres
-		if(Agenda[i].Sexo[0]=='M' || Agenda[i].Sexo[0]=='m')
+		if(Agenda[i].Sexo=='M' || Agenda[i].Sexo=='m')
 		{
 			num_hombres++;
 			sum_edadM+=Agenda[i].Edad;
